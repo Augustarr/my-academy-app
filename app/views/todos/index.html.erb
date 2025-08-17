@@ -1,9 +1,16 @@
-<h1>Todos</h1>
-
-<turbo-frame id="new_todo">
-  <%= render "form", todo: Todo.new %>
-</turbo-frame>
-<%= turbo_stream_from "todos" %>
-<ul id="todos-list">
-  <%= render @todos %>
-</ul>
+<div class="w-full h-full flex flex-col">
+  <div class="flex justify-center">
+    <h1>Todos</h1>
+  </div>
+  <div class="flex justify-center">
+    <turbo-frame id="new_todo">
+      <%= render "form", todo: Todo.new %>
+    </turbo-frame>
+  </div>
+  <div class="flex justify-center">
+    <%= turbo_stream_from "todos" %>
+    <ul id="todos-list">
+      <%= render @todos %>
+    </ul>
+  </div>
+</div>

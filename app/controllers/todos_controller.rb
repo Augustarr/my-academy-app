@@ -13,8 +13,9 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(todo_params)
-     respond_to do |format|
+   @todo = Todo.new(todo_params)
+
+    respond_to do |format|
       if @todo.save
         format.turbo_stream # Renders create.turbo_stream.erb
         format.html { redirect_to todo_url(@todo), notice: "Todo was successfully created." }
