@@ -1,11 +1,11 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @todos = Todo.all.order(created_at: :desc)
   end
 
-  def show 
+  def show
   end
 
   def new
@@ -40,7 +40,7 @@ class TodosController < ApplicationController
 
   def destroy
    @todo.destroy!
-  
+
     respond_to do |format|
       format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@todo)}") }
       format.html { redirect_to todos_path, status: :see_other, notice: "Todo was successfully destroyed." }
