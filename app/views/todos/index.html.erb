@@ -6,12 +6,16 @@
       </p>
     </div>
     <div class="flex justify-center mb-10">
-      <%= image_tag "profile_img.jpeg", class: "w-60 h-60 object-cover rounded-full border-4 border-[#514F4D] shadow-lg"%>
+      <%= link_to profile_path, class: "" do %>
+        <%= image_tag "profile_img.jpeg", class: "w-60 h-60 object-cover rounded-full border-4 border-[#514F4D] shadow-lg"%>
+      <% end %>
     </div>
     <div class="flex justify-center mb-10">
-      <p class="text-2xl max-lg:text-3xl font-bold text-[#514F4D] drop-shadow-md">
-        Nawamin Wongpakham
-      </p>
+      <%= link_to profile_path, class: "flex items-center" do %>
+        <p class="text-2xl max-lg:text-xl font-bold text-[#514F4D] drop-shadow-md hover:text-[#FFA500] hover:border-[#DDBD9C]">
+          Nawamin Wongpakham
+        </p>
+      <% end %>
       <div class="flex ml-10">
         <%= link_to "https://github.com/Augustarr", target: "_blank", rel: "noopener", class: "flex items-center" do %>
           <%= image_tag "github-142-svgrepo-com.svg", class: "w-6 h-6 my-1"%>
@@ -20,7 +24,7 @@
           <%= image_tag "linkedin-rounded-svgrepo-com.svg", class: "w-6 h-6 my-1 ml-4"%>
         <% end %>
         <%= link_to "https://www.facebook.com/nawamin.wongpakham.2024", target: "_blank", rel: "noopener", class: "flex items-center" do %>
-          <%= image_tag "facebook-svgrepo-com.svg", class: "w-7 h-7 my-1 ml-4"%>
+          <%= image_tag "facebook-svgrepo-com.svg", class: "w-7 h-7 ml-4"%>
         <% end %>
       </div>
     </div>
