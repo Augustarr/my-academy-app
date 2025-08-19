@@ -17,7 +17,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       if @todo.save
-        format.turbo_stream # Renders create.turbo_stream.erb
+        format.turbo_stream
         format.html { redirect_to todo_url(@todo), notice: "Todo was successfully created." }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@todo)}_form", partial: "form", locals: { todo: @todo }) }
