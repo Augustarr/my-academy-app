@@ -84,6 +84,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
     database: my_academy_app_production
     username: my_academy_app
     password: <%= ENV["MY_ACADEMY_APP_DATABASE_PASSWORD"] %>
