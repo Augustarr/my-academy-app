@@ -79,6 +79,14 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
+  config.action_cable.url = "wss://your-app.onrender.com/cable"
+  config.action_cable.allowed_request_origins = [
+    /https:\/\/.*\.onrender\.com/,
+    "https://my-academy-app.onrender.com"
+  ]
+
+  config.consider_all_requests_local = true
+  
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
